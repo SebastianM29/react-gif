@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types'
 
 export const GetItem = ({title,image,id}) => {
   return (
@@ -9,4 +9,9 @@ export const GetItem = ({title,image,id}) => {
     </div>
 
   )
+}
+
+GetItem.propTypes = {
+  title : PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired
 }

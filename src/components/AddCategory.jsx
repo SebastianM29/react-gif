@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import  PropTypes  from "prop-types";
+
+
 //cada componente puede tener su propio estado
 export const AddCategory = ({onNewCategory}) => {
 
@@ -24,15 +27,15 @@ export const AddCategory = ({onNewCategory}) => {
       // return [...algos,inputValue]
      //})
 
-     onNewCategory(inputValue.trim())
      setInputValue('')
+     onNewCategory(inputValue.trim())
      
     }
 
    
 
     return (
-      <form onSubmit={(e) => capturandoValor(e)} >
+      <form onSubmit={(e) => capturandoValor(e)} aria-label='form'>
         <input 
           type="text"
           placeholder='Buscar imagenes'
@@ -44,4 +47,9 @@ export const AddCategory = ({onNewCategory}) => {
           />
        </form>
   )
+}
+
+
+AddCategory.propTypes = {
+  onNewCategory : PropTypes.func.isRequired
 }

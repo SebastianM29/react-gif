@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`debo obtener los 3 argumentos snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img
+      alt="imagen dragon ball"
+      src="http://localhost/imagen"
+    />
+    <p>
+      imagen dragon ball
+    </p>
+  </div>
+</div>
+`;
