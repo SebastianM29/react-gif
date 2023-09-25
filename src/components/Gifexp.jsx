@@ -1,6 +1,7 @@
 
 import { useFetchGifs } from "../hook/useFetchGifs"
-import { Estado, GetItem } from "../components"
+import {  GetItem } from "../components"
+import  PropTypes from "prop-types";
 
 
 
@@ -11,8 +12,10 @@ import { Estado, GetItem } from "../components"
 
 
 export const Gifexp = ({ category }) => {
+  
   const {isLoading, imagenes } = useFetchGifs(category)
 
+  
 
 
  console.log('desde gifexp para el .map',imagenes,isLoading)
@@ -21,8 +24,11 @@ export const Gifexp = ({ category }) => {
   return (
     <>
    
-    <Estado status={isLoading}/>
+
     <h3>{ category }</h3>
+    {
+      isLoading && ( <h2>cargando</h2> )
+    }
     <div className="card-grid">
       
       {
@@ -45,4 +51,8 @@ export const Gifexp = ({ category }) => {
     </>
 
   )
+}
+
+Gifexp.propTypes = {
+  category : PropTypes.string.isRequired
 }
